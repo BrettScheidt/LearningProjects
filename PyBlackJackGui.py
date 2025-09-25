@@ -16,12 +16,12 @@ Bui.title("BlackJack")
 Bui.geometry("400x300")
 
 def hit_click():
-    print("Hit button clicked")
+    #print("Hit button clicked")
     #listbox.insert(tk.END, "Hit button clicked") #end is at the bottom
     deal("Player")
 
 def stand_click():
-    print("Stand button clicked")
+    #print("Stand button clicked")
     #listbox.insert(0, "Stand button clicked") Zero is top
     checkWin()
 
@@ -64,7 +64,7 @@ def deal(User):
                 card = 11
         playerTotal += card
         listbox.insert(0, card)
-        print("Player was dealt a " + str(card) + ". Player total is now " + str(playerTotal))
+        #print("Player was dealt a " + str(card) + ". Player total is now " + str(playerTotal))
         PTotal.config(text ="Player Total: " + str(playerTotal))
         if 21 <= playerTotal :
             checkWin()
@@ -81,7 +81,7 @@ def deal(User):
         dealerTotal += card
         listboxD.insert(0, card)
         DTotal.config(text ="Dealer Total: " + str(dealerTotal))
-        print("Dealer was dealt a ",card,". Dealer total is now ",dealerTotal) # have to use commas when not using just strings
+        #print("Dealer was dealt a ",card,". Dealer total is now ",dealerTotal) # have to use commas when not using just strings
 
 def checkWin():
     global playerTotal
@@ -97,15 +97,15 @@ def checkWin():
             win += 1
             Gamelog.insert(0, str(playerTotal) + " to " + str(dealerTotal) + "Player Wins")
         elif dealerTotal > playerTotal:
-            print("Dealer wins!")
+            #print("Dealer wins!")
             loss += 1
             Gamelog.insert(0, str(playerTotal) + " to " + str(dealerTotal) + "Dealer Wins")
         elif dealerTotal == playerTotal:
-            print("Dealer Wins on a tie!")
+            #print("Dealer Wins on a tie!")
             loss += 1
             Gamelog.insert(0, str(playerTotal) + " to " + str(dealerTotal) + "Dealer Wins")
     elif playerTotal > 21:
-        print("Player busts! Dealer wins!")
+        #print("Player busts! Dealer wins!")
         loss += 1
         Gamelog.insert(0, str(playerTotal) + " to " + str(dealerTotal) + "Dealer Wins")
     winloss.config(text="Wins: " + str(win) + " Losses: " + str(loss))
@@ -134,4 +134,5 @@ def run():
     deal("Dealer")
          
 run()
+
 Bui.mainloop()
