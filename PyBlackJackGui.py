@@ -16,12 +16,12 @@ Bui.title("BlackJack")
 Bui.geometry("400x300")
 
 def hit_click():
-    #print("Hit button clicked")
+    print("Hit button clicked")
     #listbox.insert(tk.END, "Hit button clicked") #end is at the bottom
     deal("Player")
 
 def stand_click():
-    #print("Stand button clicked")
+    print("Stand button clicked")
     #listbox.insert(0, "Stand button clicked") Zero is top
     checkWin()
 
@@ -64,7 +64,7 @@ def deal(User):
                 card = 11
         playerTotal += card
         listbox.insert(0, card)
-        #print("Player was dealt a " + str(card) + ". Player total is now " + str(playerTotal))
+       # print("Player was dealt a " + str(card) + ". Player total is now " + str(playerTotal))
         PTotal.config(text ="Player Total: " + str(playerTotal))
         if 21 <= playerTotal :
             checkWin()
@@ -88,12 +88,12 @@ def checkWin():
     global dealerTotal
     global win
     global loss
-    while dealerTotal < 17 and playerTotal <= 21:
+    deal("Dealer")
+    while (dealerTotal < 17) and playerTotal <= 21:
         deal("Dealer")
     if playerTotal <= 21:
-        deal("Dealer")
         if dealerTotal > 21 or playerTotal > dealerTotal:
-            print("Player wins!")
+            #print("Player wins!")
             win += 1
             Gamelog.insert(0, str(playerTotal) + " to " + str(dealerTotal) + "Player Wins")
         elif dealerTotal > playerTotal:
@@ -134,5 +134,4 @@ def run():
     deal("Dealer")
          
 run()
-
 Bui.mainloop()
