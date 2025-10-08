@@ -10,6 +10,7 @@ def fileCheck(u,o):
         lines = file.readlines()
     with open(o, "r", encoding='utf-8') as file2:
         lines2 = file2.readlines()
+    count = 0
     for line2 in lines2:
         x = line2.strip()
         exists = False
@@ -18,7 +19,8 @@ def fileCheck(u,o):
             if x == a:
                 exists = True
         if(not exists):    
-            print("Item located on line " +  x + " in " + o + " does not exist in " + u)
+            print("Item located on line " +  str(count) + " in " + o + " does not exist in " + u)
+        count += 1
 
 def patterncheck(u,o):
     with open(u, "r", encoding='utf-8') as file:
