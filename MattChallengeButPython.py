@@ -1,8 +1,3 @@
-#Use r before the string for it to read the backslashes correctly
-#Otherwise it tries to interpret them as formatting
-#, encoding = 'utf-16' is for the encoding and making sure their isnt any weird characters
-#TTTTTTTTTTTTTTTTTT
-#This current checks to see what lines are missing from z in comparision to y
 import os 
 
 def fileCheck(u,o):
@@ -60,3 +55,4 @@ def run ():
     patterncheck(y, pattern)
 
 run()
+
