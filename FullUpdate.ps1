@@ -114,8 +114,8 @@ $test = isUpdated($filex)
 #This 
 if(!$test){
     if($cleanName.Contains("24H2") -and !$cleanName.Contains($Currentversion)){
-        $updateFile = "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu"
-        $updateFile2= "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/5315757b-0dc6-4282-a148-c7bf0b6b0e90/public/windows11.0-kb5068861-x64_acc4fe9c928835c0d44cdc0419d1867dbd2b62b2.msu"
+        $updateFile2 = "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu"
+        $updateFile= "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/5315757b-0dc6-4282-a148-c7bf0b6b0e90/public/windows11.0-kb5068861-x64_acc4fe9c928835c0d44cdc0419d1867dbd2b62b2.msu"
         $Folder = "C:\IHDTemp"
         $updatePath= "$Folder\$time.msu"
         $updatePath2= "$Folder\$time.msu"
@@ -153,4 +153,5 @@ if(!$test){
 }
 else{
     Write-Output("Fully Updated, No MSI download required")
+
 }
